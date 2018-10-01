@@ -1,2 +1,2 @@
-# discord-tweetbot
-Discordbot to help you tweet via discord.
+# how to use
+`$t this is test tweet #test`
