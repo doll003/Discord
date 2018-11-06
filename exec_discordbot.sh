@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 set -e
 
@@ -10,4 +10,4 @@ export TWITTER_CONSUMER_SECRET=$(aws ssm get-parameters --name "/${PARAMETER_STO
 export TWITTER_TOKEN=$(aws ssm get-parameters --name "/${PARAMETER_STORE_PREFIX}/TWITTER_TOKEN" --with-decryption --query "Parameters[0].Value" --region ap-northeast-1 --output text)
 export TWITTER_TOKEN_SECRET=$(aws ssm get-parameters --name "/${PARAMETER_STORE_PREFIX}/TWITTER_TOKEN_SECRET" --with-decryption --query "Parameters[0].Value" --region ap-northeast-1 --output text)
 
-exec "python discordbot.py"
+exec python3 /discord-tweetbot/discordbot.py
