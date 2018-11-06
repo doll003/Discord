@@ -1,5 +1,8 @@
 from discord.ext import commands
 import twitter_post
+import os
+
+DISCORD_SECRET_KEY = os.environ['DISCORD_SECRET_KEY']
 
 description = 'You can tweet via me!'
 bot = commands.Bot(command_prefix='$', description=description)
@@ -26,4 +29,4 @@ async def t(ctx, *args):
     else:
         await bot.say("{0} ツイートに成功しました！やったね！".format(ctx.message.author.mention))
 
-bot.run('DISCORD_SECRET_KEY')
+bot.run(DISCORD_SECRET_KEY)
